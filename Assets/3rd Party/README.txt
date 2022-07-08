@@ -1,0 +1,1 @@
+Everything here should be deleted before submitting unless we will use assets after all
