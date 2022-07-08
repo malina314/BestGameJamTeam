@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107829598}
+  - component: {fileID: 107829599}
   m_Layer: 0
   m_Name: UI Game Root
   m_TagString: Untagged
@@ -154,6 +155,18 @@ Transform:
   m_Father: {fileID: 460497897}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &107829599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107829597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c87bb7b10f7a5749982e9d219b4726c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &205139480
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 0}
+  ui: {fileID: 535337427}
 --- !u!1 &460497896
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 0}
+  ui: {fileID: 107829599}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535337426}
+  - component: {fileID: 535337427}
   m_Layer: 0
   m_Name: UI Menu Root
   m_TagString: Untagged
@@ -395,6 +411,18 @@ Transform:
   m_Father: {fileID: 205139481}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535337427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535337425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffc1f591c81f5948ac24fc30dbda917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &567563410
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 0}
+  ui: {fileID: 1753933035}
 --- !u!4 &1661901317
 Transform:
   m_ObjectHideFlags: 0
@@ -642,6 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1753933034}
+  - component: {fileID: 1753933035}
   m_Layer: 0
   m_Name: UI GameOver Root
   m_TagString: Untagged
@@ -664,3 +694,15 @@ Transform:
   m_Father: {fileID: 1661901317}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1753933035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753933033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75d7fb15c643f94d9ec06e04a7fafe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
