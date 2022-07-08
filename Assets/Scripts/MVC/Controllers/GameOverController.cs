@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverController : BaseController
+public class GameOverController : BaseController<UIGameOverRoot>
 {
     public override void EngageController()
     {

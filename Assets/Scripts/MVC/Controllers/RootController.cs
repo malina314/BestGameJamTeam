@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class RootController : MonoBehaviour
 {
-    public enum ControllerTypeEnum
+    /// <summary>
+    /// Every new type must be added as case in ChangeController() and in DisengageController()
+    /// </summary>
+    public enum ControllerTypeEnum 
     {
         Menu,
         Game,
