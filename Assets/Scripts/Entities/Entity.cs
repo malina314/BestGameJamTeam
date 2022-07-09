@@ -60,6 +60,15 @@ public class Entity : MonoBehaviour
         }
     }
 
+    public void DealDamage(int damage)
+    {
+        this.Health -= damage;
+        if (OnDamageDealt != null)
+        {
+            OnDamageDealt(this);
+        }
+    }
+
     public void TryToAttack<T>() where T : Entity // wywo³aj co jakiœ czas ¿eby zaatakowaæ
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, Range);
