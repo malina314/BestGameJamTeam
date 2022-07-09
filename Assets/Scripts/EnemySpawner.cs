@@ -36,6 +36,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void spawnNewWave()
     {
+        if (waveNumber >= waves.Length)
+        {
+            waveNumber = waves.Length - 1;
+        }
         for(int i = 0; i < spawnPoints.Length; i++)
         {
             spawnEnemyGroup(i, new int[] { waves[waveNumber] / spawnPoints.Length });

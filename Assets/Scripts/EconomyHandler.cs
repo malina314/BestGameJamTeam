@@ -12,6 +12,7 @@ public class EconomyHandler : MonoBehaviour
     public void addBalance(int amount)
     {
         Balance += amount;
+        Debug.Log($"Account balance: {Balance}");
     }
     /// <summary>method <c>subtractBalance</c> returns false if balance is too low, true otherwise.</summary>
     public bool subtractBalance(int amount) //returns false if balance is too low, true otherwise

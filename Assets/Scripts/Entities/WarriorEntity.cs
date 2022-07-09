@@ -9,10 +9,11 @@ public class WarriorEntity : Entity
 
     void Update()
     {
-        Debug.Log("B PRESSED");
-        if (Input.GetKeyDown(KeyCode.D))
+        elapsed += Time.deltaTime;
+        if (elapsed >= attackDelay)
         {
-            this.TryToAttack<EnemyEntity>();
+            elapsed = elapsed % 1f;
+            TryToAttack<EnemyEntity>();
         }
     }
 
@@ -51,6 +52,7 @@ public class WarriorEntity : Entity
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
+            Attack(target);
         }
     }
 }
