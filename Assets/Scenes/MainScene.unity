@@ -1171,6 +1171,7 @@ MonoBehaviour:
   archerPrefab: {fileID: 220263181187949082, guid: 1bcb8eed989ad5b4384c8c91eb76345b, type: 3}
   shielderPrefab: {fileID: 6461547427497268475, guid: 418a22abbfd999c45871b66821f01e86, type: 3}
   warriorsContainer: {fileID: 216419019}
+  navMeshSurface: {fileID: 1962095562}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2243,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
