@@ -13,14 +13,17 @@ public class EnemyEntity : Entity
     private NavMeshAgent agent;
 
     public int Reward { get => reward; set => reward = value; }
+    public Transform targetPoint;
 
+    private float delay = 1f;
     private void Start()
     {
         //Debug.Log("I ADDED METHOD TO EVENT");
         OnDeath += giveReward;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        agent.SetDestination(new Vector3(-10, 0, 0));
+        agent.SetDestination(targetPoint.position);
+        
     }
 
     void Update()
@@ -30,6 +33,18 @@ public class EnemyEntity : Entity
         {
             elapsed = elapsed % 1f;
             TryToAttack<WarriorEntity>();
+        }
+
+        //DEATH BY CASTLE
+        delay -= Time.deltaTime;        
+        if(delay <= 0f)
+        {
+            if (Vector3.Distance(targetPoint.position,transform.position) < 1f)
+            {
+                FindObjectOfType<GameController>()?.DealDamageToCastle(1);
+                reward = 0;
+                KillEntity();
+            }
         }
     }
 

@@ -47,6 +47,12 @@ public class Entity : MonoBehaviour
         }
     }
 
+    protected void KillEntity()
+    {
+        OnDeath?.Invoke(this);
+        Destroy(gameObject);
+    }
+
     public int Damage { get => damage; set => damage = value; }
     public float Range { get => range; set => range = value; }
     public int MaxHealth { get => maxHealth; }

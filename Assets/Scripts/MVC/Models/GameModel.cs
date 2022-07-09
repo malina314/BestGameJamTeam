@@ -27,4 +27,8 @@ public class GameModel : MonoBehaviour
     [SerializeField] private Transform enemiesContainer;
     public Transform EnemiesContainer { get => enemiesContainer; }
 
+    public int castleHealth;
+
+    public string gameOverState;
+
 }

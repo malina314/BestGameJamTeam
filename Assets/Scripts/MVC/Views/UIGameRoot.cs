@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -9,6 +10,8 @@ public class UIGameRoot : UIRoot
 {
     [SerializeField] private UIWarrior warriorPrefab;
     [SerializeField] private GameObject warriorsContainer;
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI waveText;
     public override void InitView()
     {
         base.InitView();

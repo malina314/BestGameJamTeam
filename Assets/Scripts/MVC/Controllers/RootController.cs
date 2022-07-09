@@ -43,7 +43,7 @@ public class RootController : MonoBehaviour
                 gameController.EngageController();
                 break;
             case ControllerTypeEnum.GameOver:
-                gameController.EngageController();
+                gameOverController.EngageController();
                 break;
 
             default:
