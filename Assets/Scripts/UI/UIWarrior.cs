@@ -20,8 +20,9 @@ public class UIWarrior : MonoBehaviour
         draggableImage.OnEndDragAction += OnEndDrag;
 
         image.sprite = warriorData.sprite;
-        text.text = warriorData.name;
+        text.text = warriorData.warriorType.ToString();
         warriorType = warriorData.warriorType;
+        
     }
 
     public UnityAction<PointerEventData,WarriorType> OnEndDragAction;
