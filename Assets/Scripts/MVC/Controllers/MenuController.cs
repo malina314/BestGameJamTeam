@@ -6,12 +6,23 @@ public class MenuController : BaseController<UIMenuRoot>
 {
     public override void EngageController()
     {
+        ui.InitView();
         base.EngageController();
-        root.ChangeController(RootController.ControllerTypeEnum.Game);
+        ui.OnGameStart += StartGame;
+        
+        Time.timeScale = 0f;
     }
 
     public override void DisengageController()
     {
         base.DisengageController();
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+
+        root.ChangeController(RootController.ControllerTypeEnum.Game);
+        Debug.Log("Started");
     }
 }
