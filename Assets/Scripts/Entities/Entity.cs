@@ -17,7 +17,7 @@ public class Entity : MonoBehaviour
     public delegate void EntityEventHandler(Entity sender);
     public event EntityEventHandler OnHealthChange;
     public event EntityEventHandler OnDamageDealt;
-    //public event EntityEventHandler OnDeath;
+    public event EntityEventHandler OnDeath;
 
     //debug fields
     [SerializeField]
@@ -31,6 +31,10 @@ public class Entity : MonoBehaviour
         health = h;
         if(health <= 0)
         {
+            if (OnDeath != null)
+            {
+                OnDeath(this);
+            }
             Destroy(gameObject);
         }
 
