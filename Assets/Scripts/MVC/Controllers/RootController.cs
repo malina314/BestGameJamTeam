@@ -21,6 +21,10 @@ public class RootController : MonoBehaviour
 
     private void Start()
     {
+        menuController.root = this;
+        gameController.root = this;
+        gameOverController.root = this;
+
         ChangeController(ControllerTypeEnum.Menu);
     }
 
