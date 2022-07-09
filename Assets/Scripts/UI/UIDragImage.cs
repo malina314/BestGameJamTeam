@@ -9,8 +9,10 @@ public class UIDragImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 {
     [SerializeField] private RectTransform rectTransform;
     [SerializeField] private CanvasScaler scaler;
+    [SerializeField] private float scaleMultiplier;
 
     private Vector2 startingPosition;
+    private Vector3 startingScale;
     public UnityAction OnBeginDragAction;
 
     public void Init(CanvasScaler scaler)
@@ -20,6 +22,7 @@ public class UIDragImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         startingPosition = rectTransform.anchoredPosition;
+        rectTransform.localScale /= scaleMultiplier;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -33,6 +36,7 @@ public class UIDragImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnEndDrag(PointerEventData eventData)
     {
         OnEndDragAction?.Invoke(eventData);
+        rectTransform.localScale *= scaleMultiplier;
         rectTransform.anchoredPosition = startingPosition;
     }
 }
