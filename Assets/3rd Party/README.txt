@@ -1,1 +1,3 @@
-Everything here should be deleted before submitting unless we will use assets after all
+Used assets:
+NavMeshPlus
+Rest should be deleted before submitting

@@ -7,6 +7,7 @@ public class GridTest : MonoBehaviour
 {
     [SerializeField] private TileBase tile;
     [SerializeField] private Tilemap tilemap;
+    [SerializeField] private Grid grid;
 
     [SerializeField]
     private List<TileData> tileDatas;
@@ -36,8 +37,7 @@ public class GridTest : MonoBehaviour
             {
                 Debug.Log($"Obra¿enia tego turreta: " + dataFromTiles[tile].damage);
             }
-
-            //tilemap.SetTile(gridPosition, tile);
+            tilemap.SetTile(gridPosition, tile);
         }
     }
 }
