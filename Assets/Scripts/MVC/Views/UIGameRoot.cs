@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIGameRoot : UIRoot
 {
+    [SerializeField] private UIWarrior warriorPrefab;
     [SerializeField] private GameObject warriorsContainer;
     public override void InitView()
     {
@@ -16,12 +19,13 @@ public class UIGameRoot : UIRoot
         base.HideView();
     }
     
-    public void SetupTurretsDragging(CanvasScaler gameCanvasScaler)
+    public void AddWarriors(List<WarriorData> warriors,UnityAction<PointerEventData,WarriorType> onTurretDragged,CanvasScaler gameCanvasScaler)
     {
-        UIWarrior[] warriors = warriorsContainer.GetComponentsInChildren<UIWarrior>();
-        foreach(var warrior in warriors)
+        foreach(var warriorData in warriors)
         {
-            warrior.draggableImage.Init(gameCanvasScaler);
+            var copy = Instantiate(warriorPrefab, warriorsContainer.transform);
+            copy.Init(warriorData,gameCanvasScaler);
+            copy.OnEndDragAction += onTurretDragged;
         }
     }
 }
