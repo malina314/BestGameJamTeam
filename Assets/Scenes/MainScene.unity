@@ -153,6 +153,8 @@ Transform:
   m_Children:
   - {fileID: 1999346975}
   - {fileID: 1670171353}
+  - {fileID: 216419019}
+  - {fileID: 2121730790}
   m_Father: {fileID: 1510065889}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1026,6 +1028,37 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &216419018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216419019}
+  m_Layer: 0
+  m_Name: Warriors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &216419019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216419018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 19238720}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &340906035 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4391861986804151576, guid: f2016de51bc01024baee8091f39ef0d4, type: 3}
@@ -1118,6 +1151,7 @@ MonoBehaviour:
   root: {fileID: 0}
   ui: {fileID: 1277246745}
   gameModel: {fileID: 460497899}
+  gridScript: {fileID: 1743702028}
 --- !u!114 &460497899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1168,9 @@ MonoBehaviour:
   warriors:
   - {fileID: 11400000, guid: 4eabf494fa51ff044a42fef846280621, type: 2}
   - {fileID: 11400000, guid: 58e211b897e4c49428a09ea1bd41f5c9, type: 2}
+  archerPrefab: {fileID: 220263181187949082, guid: 1bcb8eed989ad5b4384c8c91eb76345b, type: 3}
+  shielderPrefab: {fileID: 6461547427497268475, guid: 418a22abbfd999c45871b66821f01e86, type: 3}
+  warriorsContainer: {fileID: 216419019}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,7 +2454,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1743702029}
   - component: {fileID: 1743702028}
-  - component: {fileID: 1743702027}
   m_Layer: 0
   m_Name: '@Controllers'
   m_TagString: Untagged
@@ -2425,21 +2461,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1743702027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743702026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd7c2f5c551cc794bae4a3acd8e71eba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ArcherPrefab: {fileID: 220263181187949082, guid: 1bcb8eed989ad5b4384c8c91eb76345b, type: 3}
-  SieldmanPrefab: {fileID: 6461547427497268475, guid: 418a22abbfd999c45871b66821f01e86, type: 3}
-  gridScript: {fileID: 1743702028}
 --- !u!114 &1743702028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2452,6 +2473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af6681b92c5ed44798702562e0eae87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameModel: {fileID: 460497899}
   newTile: {fileID: 11400000, guid: 4717a5c97e49f2646ac6f954d729ed22, type: 2}
   tilemap: {fileID: 907312862}
   tileDatas: []
@@ -2574,9 +2596,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914987939}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.00000047683716, z: 0.000000044703484}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2829,6 +2851,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009933158}
   m_CullTransparentMesh: 1
+--- !u!1 &2121730789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2121730790}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2121730790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121730789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 19238720}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123953146
 GameObject:
   m_ObjectHideFlags: 0

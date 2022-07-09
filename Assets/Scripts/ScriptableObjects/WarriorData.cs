@@ -9,5 +9,6 @@ public class WarriorData : ScriptableObject
 
     public WarriorType warriorType;
     public float damage;
+    public float range;
     public float maxHealth;
 }

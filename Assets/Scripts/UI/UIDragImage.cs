@@ -32,7 +32,7 @@ public class UIDragImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public UnityAction<PointerEventData> OnEndDragAction;
     public void OnEndDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition = startingPosition;
         OnEndDragAction?.Invoke(eventData);
+        rectTransform.anchoredPosition = startingPosition;
     }
 }
