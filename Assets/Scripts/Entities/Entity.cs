@@ -13,6 +13,10 @@ public class Entity : MonoBehaviour
     private int damage;
     [SerializeField]
     private float range;
+    [SerializeField]
+    protected float attackDelay; // w sekundach
+
+    protected float elapsed = 0;
 
     public delegate void EntityEventHandler(Entity sender);
     public event EntityEventHandler OnHealthChange;
@@ -22,7 +26,6 @@ public class Entity : MonoBehaviour
     //debug fields
     [SerializeField]
     private bool showDebug;
-
 
     public int Health { get => health; set => handleDamage(value); }
 
@@ -62,11 +65,12 @@ public class Entity : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, Range);
         foreach (var collider in colliders)
         {
-            if( collider.TryGetComponent<T>(out var entity))
+            if (collider.TryGetComponent<T>(out var entity))
             {
                 if (!entity.gameObject.Equals(gameObject))
                 {
-                    this.Attack(entity);
+                    Debug.Log("I attack");
+                    Attack(entity);
                 }
             }
         }
@@ -78,15 +82,6 @@ public class Entity : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, Range);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if ( Input.GetKeyDown(KeyCode.D))
-        {
-            TryToAttack<Entity>();
         }
     }
 }

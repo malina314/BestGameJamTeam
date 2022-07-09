@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2ae7e75513f734a8501ed8d5c20c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 5
   maxHealth: 100
-  damage: 10
-  range: 100
+  damage: 1
+  range: 3
+  attackDelay: 1
   showDebug: 0
   cost: 0
 --- !u!58 &2676205408806136742

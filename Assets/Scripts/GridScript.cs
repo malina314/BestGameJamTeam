@@ -39,8 +39,19 @@ public class GridScript : MonoBehaviour //based on TileData.cs
         if (!occupiedCells.Contains(gridPosition))
         {
             Vector3 position = tilemap.GetCellCenterWorld(gridPosition);
-            Instantiate(object_prefab, position, Quaternion.identity,gameModel.WarriorsContainer);
+            WarriorEntity spawned = Instantiate(object_prefab, position, Quaternion.identity,gameModel.WarriorsContainer);
+            spawned.OnDeath += despawn;
             occupiedCells.Add(gridPosition);
+        }
+    }
+
+    public void despawn(Entity sender)
+    {
+        if (sender is WarriorEntity)
+        {
+            Vector3Int gridPosition = tilemap.WorldToCell(sender.transform.position);
+            occupiedCells.Remove(gridPosition);
+            Debug.Log("removed from HashSet");
         }
     }
 }

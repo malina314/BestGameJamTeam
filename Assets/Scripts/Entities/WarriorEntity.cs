@@ -9,8 +9,10 @@ public class WarriorEntity : Entity
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        elapsed += Time.deltaTime;
+        if (elapsed >= attackDelay)
         {
+            elapsed = elapsed % 1f;
             TryToAttack<EnemyEntity>();
         }
     }

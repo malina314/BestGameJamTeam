@@ -10,7 +10,7 @@ public class GameController : BaseController<UIGameRoot>
     public override void EngageController()
     {
         base.EngageController();
-        ui.AddWarriors(gameModel.Warriors,OnTurretDragged,gameModel.GameCanvasScaler);  
+        ui.AddWarriors(gameModel.Warriors,OnTurretDragged,gameModel.GameCanvasScaler);
     }
 
     public override void DisengageController()
@@ -22,7 +22,7 @@ public class GameController : BaseController<UIGameRoot>
     {
         Debug.Log($"Warrior type {warriorType}");
         WarriorEntity warriorToSpawn = new WarriorEntity();
-        switch(warriorType)
+        switch (warriorType)
         {
             case WarriorType.Archer:
                 warriorToSpawn = gameModel.ArcherPrefab;

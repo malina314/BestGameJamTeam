@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3397768041780116727}
   - component: {fileID: 3397768041780116726}
   - component: {fileID: 5620310883752272958}
+  - component: {fileID: -1341562016466374465}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -98,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1412686746ed5e44ac5f4f03fce5978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 5
-  damage: 5
-  range: 0.3
+  health: 50
+  maxHealth: 50
+  damage: 50
+  range: 2
+  attackDelay: 0.1
   showDebug: 0
   reward: 5
   agent: {fileID: 5620310883752272958}
@@ -127,3 +129,19 @@ NavMeshAgent:
   m_BaseOffset: 0.45
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!58 &-1341562016466374465
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3397768041780116725}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.45
