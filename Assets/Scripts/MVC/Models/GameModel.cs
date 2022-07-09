@@ -23,6 +23,8 @@ public class GameModel : MonoBehaviour
  
     [SerializeField] private NavMeshSurface2d navMeshSurface;
     public NavMeshSurface2d NavMeshSurface { get => navMeshSurface; }
-
+    
+    [SerializeField] private Transform enemiesContainer;
+    public Transform EnemiesContainer { get => enemiesContainer; }
 
 }

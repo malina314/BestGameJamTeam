@@ -21,6 +21,8 @@ public class RootController : MonoBehaviour
 
     private void Start()
     {
+        QualitySettings.antiAliasing = 0;
+
         menuController.root = this;
         gameController.root = this;
         gameOverController.root = this;

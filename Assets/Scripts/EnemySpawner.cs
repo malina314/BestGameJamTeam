@@ -5,16 +5,20 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
+    private GameModel gameModel;
+    [SerializeField]
     private GameObject[] spawnPoints;
     [SerializeField]
     private int[] waves;
+
     [SerializeField]
-    private int waveNumber = 0;
+    private float startingRadius;
     [SerializeField]
     private float spread;
     [SerializeField]
     private GameObject[] enemyPrefabs;
 
+    private int waveNumber = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,6 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("UPDATE!!!");
         if (Input.GetKeyDown(KeyCode.A))
         {
             spawnNewWave();
@@ -48,8 +51,8 @@ public class EnemySpawner : MonoBehaviour
             enemyCount += value;
         }
 
+        float radius = startingRadius;
 
-        float radius = 1;
         int numberToSpawnOnLayer = 3;
         float angle = Random.Range(0, 2 * Mathf.PI);
         while(enemyCount > 0)
@@ -87,7 +90,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 Vector3 pos = new Vector3(xcoord, ycoord, 0);
                 Quaternion rot = new Quaternion(0, 0, 0, 0);
-                Instantiate(enemyPrefabs[randomEnemyIndex],pos,rot);
+                Instantiate(enemyPrefabs[randomEnemyIndex],pos,rot,gameModel.EnemiesContainer);
                 NumberOfEnemies[randomEnemyIndex]--;
                 return;
             }
