@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class UIRoot : MonoBehaviour
 {
-    
     public virtual void InitView()
     {
         gameObject.SetActive(true);
