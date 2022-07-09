@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shiedman : TowerEntity
+public class Shielder : WarriorEntity
 {
     void Start()
     {

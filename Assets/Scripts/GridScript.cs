@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class GridScript : MonoBehaviour //based on TileData.cs
 {
+    [SerializeField] private GameModel gameModel;
     [SerializeField] private TileBase newTile;
     [SerializeField] private Tilemap tilemap;
 
@@ -32,13 +33,13 @@ public class GridScript : MonoBehaviour //based on TileData.cs
         occupiedCells = new HashSet<Vector3Int>();
     }
 
-    public void spawnTower(Vector2 mousePosition, TowerEntity object_prefab)
+    public void spawnTower(Vector2 mousePosition, WarriorEntity object_prefab)
     {
         Vector3Int gridPosition = tilemap.WorldToCell(mousePosition);
         if (!occupiedCells.Contains(gridPosition))
         {
             Vector3 position = tilemap.GetCellCenterWorld(gridPosition);
-            Instantiate(object_prefab, position, Quaternion.identity);
+            Instantiate(object_prefab, position, Quaternion.identity,gameModel.WarriorsContainer);
             occupiedCells.Add(gridPosition);
         }
     }

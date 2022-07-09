@@ -48,7 +48,7 @@ public class Entity : MonoBehaviour
     public float Range { get => range; set => range = value; }
     public int MaxHealth { get => maxHealth; }
 
-    public void attack(Entity victim)
+    public void Attack(Entity victim)
     {
         victim.Health -= this.Damage;
         if (OnDamageDealt != null)
@@ -57,7 +57,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public void tryToAttack<T>() where T : Entity // wywo³aj co jakiœ czas ¿eby zaatakowaæ
+    public void TryToAttack<T>() where T : Entity // wywo³aj co jakiœ czas ¿eby zaatakowaæ
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, Range);
         foreach (var collider in colliders)
@@ -66,7 +66,7 @@ public class Entity : MonoBehaviour
             {
                 if (!entity.gameObject.Equals(gameObject))
                 {
-                    this.attack(entity);
+                    this.Attack(entity);
                 }
             }
         }
@@ -86,7 +86,7 @@ public class Entity : MonoBehaviour
     {
         if ( Input.GetKeyDown(KeyCode.D))
         {
-            tryToAttack<Entity>();
+            TryToAttack<Entity>();
         }
     }
 }

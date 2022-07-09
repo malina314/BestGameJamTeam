@@ -14,7 +14,7 @@ public class EnemyEntity : Entity
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            tryToAttack<TowerEntity>();
+            TryToAttack<WarriorEntity>();
         }
     }
 
