@@ -18,6 +18,8 @@ public class GridScript : MonoBehaviour //based on TileData.cs
 
     private Dictionary<TileBase, TileData> dataFromTiles;
 
+    private HashSet<Vector3Int> occupiedCells;
+
     private void Awake()
     {
         dataFromTiles = new Dictionary<TileBase, TileData>();
@@ -29,6 +31,10 @@ public class GridScript : MonoBehaviour //based on TileData.cs
                 dataFromTiles.Add(tile, tileData);
             }
         }
+    }
+    private void Start()
+    {
+        occupiedCells = new HashSet<Vector3Int>();
     }
 
     private void Update()
@@ -56,6 +62,17 @@ public class GridScript : MonoBehaviour //based on TileData.cs
             oldGridPosition = gridPosition;
             tilemap.SetTile(gridPosition, newTile);
 
+        }
+    }
+
+    public void spawnTower(Vector2 mousePosition, TowerEntity object_prefab)
+    {
+        Vector3Int gridPosition = tilemap.WorldToCell(mousePosition);
+        if (!occupiedCells.Contains(gridPosition))
+        {
+            Vector3 position = tilemap.GetCellCenterWorld(gridPosition);
+            Instantiate(object_prefab, position, Quaternion.identity);
+            occupiedCells.Add(gridPosition);
         }
     }
 }
