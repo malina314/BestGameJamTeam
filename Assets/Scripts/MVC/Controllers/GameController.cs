@@ -40,4 +40,15 @@ public class GameController : BaseController<UIGameRoot>
 
         gameModel.NavMeshSurface.BuildNavMesh();
     }
+
+    public void DealDamageToCastle(int value)
+    {
+        gameModel.castleHealth-= value;
+        if(gameModel.castleHealth <= 0)
+        {
+            Time.timeScale = 0f;
+            gameModel.gameOverState = "LOST";
+            root.ChangeController(RootController.ControllerTypeEnum.GameOver);
+        }
+    }
 }

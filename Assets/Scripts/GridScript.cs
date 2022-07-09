@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Tilemaps;
 
 public class GridScript : MonoBehaviour //based on TileData.cs
 {
+    [SerializeField] private NavMeshSurface2d navMeshSurface;
     [SerializeField] private GameModel gameModel;
     [SerializeField] private TileBase newTile;
     [SerializeField] private Tilemap tilemap;
@@ -52,6 +54,7 @@ public class GridScript : MonoBehaviour //based on TileData.cs
             Vector3Int gridPosition = tilemap.WorldToCell(sender.transform.position);
             occupiedCells.Remove(gridPosition);
             Debug.Log("removed from HashSet");
+            navMeshSurface.BuildNavMesh();
         }
     }
 }

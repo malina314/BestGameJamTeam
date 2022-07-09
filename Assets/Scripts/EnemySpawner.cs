@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject[] spawnPoints;
     [SerializeField]
+    private Transform targetPoint;
+    [SerializeField]
     private int[] waves;
 
     [SerializeField]
@@ -16,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float spread;
     [SerializeField]
-    private GameObject[] enemyPrefabs;
+    private EnemyEntity[] enemyPrefabs;
 
     private int waveNumber = 0;
     // Start is called before the first frame update
@@ -94,7 +96,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 Vector3 pos = new Vector3(xcoord, ycoord, 0);
                 Quaternion rot = new Quaternion(0, 0, 0, 0);
-                Instantiate(enemyPrefabs[randomEnemyIndex],pos,rot,gameModel.EnemiesContainer);
+                var copy = Instantiate(enemyPrefabs[randomEnemyIndex],pos,rot,gameModel.EnemiesContainer);
+                copy.targetPoint = targetPoint;
                 NumberOfEnemies[randomEnemyIndex]--;
                 return;
             }
