@@ -52,4 +52,9 @@ public class GameController : BaseController<UIGameRoot>
             root.ChangeController(RootController.ControllerTypeEnum.GameOver);
         }
     }
+
+    public void UpdateMoney(int value)
+    {
+        ui.UpdateMoney(value);
+    }
 }
