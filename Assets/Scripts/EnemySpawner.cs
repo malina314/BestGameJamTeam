@@ -21,6 +21,9 @@ public class EnemySpawner : MonoBehaviour
     private EnemyEntity[] enemyPrefabs;
 
     private int waveNumber = 0;
+
+    public int WaveNumber { get => waveNumber; set => waveNumber = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,17 +39,17 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void spawnNewWave()
+    public void spawnNewWave()
     {
-        if (waveNumber >= waves.Length)
+        if (WaveNumber >= waves.Length)
         {
-            waveNumber = waves.Length - 1;
+            WaveNumber = waves.Length - 1;
         }
         for(int i = 0; i < spawnPoints.Length; i++)
         {
-            spawnEnemyGroup(i, new int[] { waves[waveNumber] / spawnPoints.Length });
+            spawnEnemyGroup(i, new int[] { waves[WaveNumber] / spawnPoints.Length });
         }
-        waveNumber++;
+        WaveNumber++;
     }
 
     private void spawnEnemyGroup(int spawnpoint, int[] NumberOfEnemies) // number of enemies of each type
