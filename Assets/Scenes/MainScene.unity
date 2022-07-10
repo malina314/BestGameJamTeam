@@ -2898,10 +2898,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCanvasScaler: {fileID: 340906035}
   warriors:
-  - {fileID: 11400000, guid: 4eabf494fa51ff044a42fef846280621, type: 2}
   - {fileID: 11400000, guid: 58e211b897e4c49428a09ea1bd41f5c9, type: 2}
+  - {fileID: 11400000, guid: 8e232d369bb95a04bbbaae5299730287, type: 2}
+  - {fileID: 11400000, guid: 4eabf494fa51ff044a42fef846280621, type: 2}
   archerPrefab: {fileID: 220263181187949082, guid: 1bcb8eed989ad5b4384c8c91eb76345b, type: 3}
   shielderPrefab: {fileID: 6461547427497268475, guid: 418a22abbfd999c45871b66821f01e86, type: 3}
+  swordsman: {fileID: 1366635337670245460, guid: 5931d2ffbc60528498e077b65768db53, type: 3}
   warriorsContainer: {fileID: 216419019}
   navMeshSurface: {fileID: 1962095562}
   enemiesContainer: {fileID: 2121730790}
