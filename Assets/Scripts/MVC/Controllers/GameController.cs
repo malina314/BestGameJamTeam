@@ -36,9 +36,12 @@ public class GameController : BaseController<UIGameRoot>
                 break;
         }
 
-        gridScript.spawnTower(Camera.main.ScreenToWorldPoint(eventData.position), warriorToSpawn);
+        if (FindObjectOfType<EconomyHandler>().subtractBalance(warriorToSpawn.cost))
+        {
+            gridScript.spawnTower(Camera.main.ScreenToWorldPoint(eventData.position), warriorToSpawn);
 
-        gameModel.NavMeshSurface.BuildNavMesh();
+            gameModel.NavMeshSurface.BuildNavMesh();
+        }
     }
 
     public void DealDamageToCastle(int value)
