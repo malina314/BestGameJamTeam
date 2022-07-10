@@ -72,10 +72,17 @@ public class GameController : BaseController<UIGameRoot>
         if (waveScheduler.IsWaveInProgress)
         {
             ui.UpdateWave($"Wave: {waveScheduler.CurrentWaveNumber}");
+            
         } 
         else
         {
             ui.UpdateWave($"Next wave in: {waveScheduler.CalculatedTime:F2}");
+            if (gameModel.amountOfWaves < waveScheduler.CurrentWaveNumber)
+            {
+                Time.timeScale = 0f;
+                gameModel.gameOverState = "WIN";
+                root.ChangeController(RootController.ControllerTypeEnum.GameOver);
+            }
         }
     }
 

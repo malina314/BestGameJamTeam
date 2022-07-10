@@ -31,4 +31,6 @@ public class GameModel : MonoBehaviour
 
     public string gameOverState;
 
+    public int amountOfWaves;
+
 }

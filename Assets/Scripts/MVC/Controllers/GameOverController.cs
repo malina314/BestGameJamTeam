@@ -24,11 +24,11 @@ public class GameOverController : BaseController<UIGameOverRoot>
 
     public void CreateLostView()
     {
-
+        ui.UpdateTitle("You LOST!");
     }
 
     public void CreateWinView()
     {
-
+        ui.UpdateTitle("You WON!");
     }
 }

@@ -13,7 +13,6 @@ public class MenuController : BaseController<UIMenuRoot>
 
     public void NormalGameInit()
     {
-        ui.InitView();
         ui.OnGameStart += StartGame;
 
         Time.timeScale = 0f;
