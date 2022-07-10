@@ -8,7 +8,7 @@ public class MenuController : BaseController<UIMenuRoot>
     {
         
         base.EngageController();
-        ForDebuggingGameInit();
+        NormalGameInit();
     }
 
     public void NormalGameInit()
