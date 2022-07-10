@@ -33,7 +33,7 @@ public class GameController : BaseController<UIGameRoot>
                 warriorToSpawn = gameModel.ShielderPrefab;
                 break;
             case WarriorType.Swordsman:
-                Debug.Log("UPS");
+                warriorToSpawn = gameModel.Swordsman;
                 break;
         }
 
