@@ -12,6 +12,7 @@ public class UIGameRoot : UIRoot
     [SerializeField] private GameObject warriorsContainer;
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI waveText;
+    [SerializeField] private TextMeshProUGUI moneyText;
     public override void InitView()
     {
         base.InitView();
@@ -30,5 +31,14 @@ public class UIGameRoot : UIRoot
             copy.Init(warriorData,gameCanvasScaler);
             copy.OnEndDragAction += onTurretDragged;
         }
+    }
+    public void UpdateHealth(int value)
+    {
+        healthText.text = value.ToString();
+    }
+
+    public void UpdateMoney(int value)
+    {
+        moneyText.text = $"{value} $";
     }
 }

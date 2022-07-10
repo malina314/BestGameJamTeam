@@ -10,7 +10,8 @@ public class UIWarrior : MonoBehaviour
 {
     public UIDragImage draggableImage;
     public Image image;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI warriorName;
+    public TextMeshProUGUI price;
 
     private WarriorType warriorType;
 
@@ -20,7 +21,8 @@ public class UIWarrior : MonoBehaviour
         draggableImage.OnEndDragAction += OnEndDrag;
 
         image.sprite = warriorData.sprite;
-        text.text = warriorData.warriorType.ToString();
+        warriorName.text = warriorData.warriorType.ToString();
+        price.text = $"{warriorData.price} $";
         warriorType = warriorData.warriorType;
         
     }

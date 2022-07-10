@@ -107,7 +107,7 @@ MonoBehaviour:
   range: 0
   attackDelay: 1000
   showDebug: 0
-  cost: 100
+  cost: 50
 --- !u!58 &8420556032879383706
 CircleCollider2D:
   m_ObjectHideFlags: 0

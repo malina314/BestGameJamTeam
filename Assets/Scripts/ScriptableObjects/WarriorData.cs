@@ -11,4 +11,5 @@ public class WarriorData : ScriptableObject
     public float damage;
     public float range;
     public float maxHealth;
+    public int price;
 }

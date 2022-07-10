@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class WarriorEntity : Entity
 {
-    [SerializeField]
-    private int cost;
+    public int cost;
 
     void Update()
     {
