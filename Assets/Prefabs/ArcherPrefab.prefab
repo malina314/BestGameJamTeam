@@ -106,7 +106,7 @@ MonoBehaviour:
   range: 4
   attackDelay: 1
   showDebug: 0
-  cost: 500
+  cost: 1000
   arealDamagePrefab: {fileID: 7170643110309178474, guid: 759badf668dfda948bba5d09f423ebec, type: 3}
   ArrowPrefab: {fileID: 717536862859596660, guid: 46a9e29c7d5a49849a216f90a3d00d6d, type: 3}
 --- !u!58 &2676205408806136742

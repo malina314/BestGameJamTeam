@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 50
   range: 0
   maxHealth: 30
-  price: 500
+  price: 1000
