@@ -28,6 +28,7 @@ public abstract class BaseController<T> : BaseController where T : UIRoot
     public override void EngageController()
     {
         base.EngageController();
+        ui.InitView();
     }
     public override void DisengageController()
     {
