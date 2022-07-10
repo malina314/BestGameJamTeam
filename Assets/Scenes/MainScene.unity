@@ -2778,6 +2778,7 @@ MonoBehaviour:
   ui: {fileID: 1277246745}
   gameModel: {fileID: 460497899}
   gridScript: {fileID: 1743702028}
+  waveScheduler: {fileID: 1743702032}
 --- !u!114 &460497899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3980,6 +3981,7 @@ GameObject:
   - component: {fileID: 1743702028}
   - component: {fileID: 1743702030}
   - component: {fileID: 1743702031}
+  - component: {fileID: 1743702032}
   m_Layer: 0
   m_Name: '@Controllers'
   m_TagString: Untagged
@@ -4055,6 +4057,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balance: 1000
+--- !u!114 &1743702032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743702026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5662e880bd319498c926f250316875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWaveInProgress: 0
+  timeToNextWave: 15
+  remainingEnemies: -1
+  currentWaveNumber: 1
+  elapsed: 0
+  nextWaveStartTime: 0
 --- !u!1 &1753933033
 GameObject:
   m_ObjectHideFlags: 0

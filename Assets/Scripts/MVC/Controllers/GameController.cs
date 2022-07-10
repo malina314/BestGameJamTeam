@@ -7,6 +7,7 @@ public class GameController : BaseController<UIGameRoot>
 {
     [SerializeField] private GameModel gameModel;
     [SerializeField] private GridScript gridScript;
+    [SerializeField] private WaveScheduler waveScheduler;
     public override void EngageController()
     {
         base.EngageController();
@@ -59,5 +60,22 @@ public class GameController : BaseController<UIGameRoot>
     public void UpdateMoney(int value)
     {
         ui.UpdateMoney(value);
+    }
+
+    public void UpdateWave()
+    {
+        if (waveScheduler.IsWaveInProgress)
+        {
+            ui.UpdateWave($"Wave: {waveScheduler.CurrentWaveNumber}");
+        } 
+        else
+        {
+            ui.UpdateWave($"Next wave in: {waveScheduler.CalculatedTime:F2}");
+        }
+    }
+
+    private void Update()
+    {
+        UpdateWave();
     }
 }

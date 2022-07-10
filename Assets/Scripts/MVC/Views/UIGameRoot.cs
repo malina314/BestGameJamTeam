@@ -41,4 +41,9 @@ public class UIGameRoot : UIRoot
     {
         moneyText.text = $"{value} $";
     }
+
+    public void UpdateWave(string message)
+    {
+        waveText.text = message;
+    }
 }

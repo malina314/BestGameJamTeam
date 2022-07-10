@@ -17,6 +17,7 @@ public class WaveScheduler : MonoBehaviour
     public float TimeToNextWave { get => TimeToNextWave; set => TimeToNextWave = value; }
     public int CurrentWaveNumber { get => currentWaveNumber; set => currentWaveNumber = value; }
     public float TimeToNextWave1 { get => timeToNextWave; set => timeToNextWave = value; }
+    public float CalculatedTime { get => nextWaveStartTime - elapsed; }
 
     [SerializeField]
     protected float elapsed = 0;
