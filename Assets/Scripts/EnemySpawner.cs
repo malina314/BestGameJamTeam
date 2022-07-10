@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject[] spawnPoints;
     [SerializeField]
-    private Transform targetPoint;
+    private Transform[] targetPoints;
     [SerializeField]
     private int[] waves;
 
@@ -100,13 +100,13 @@ public class EnemySpawner : MonoBehaviour
                 Vector3 pos = new Vector3(xcoord, ycoord, 0);
                 Quaternion rot = new Quaternion(0, 0, 0, 0);
                 var copy = Instantiate(enemyPrefabs[randomEnemyIndex],pos,rot,gameModel.EnemiesContainer);
-                copy.targetPoint = targetPoint;
+                copy.targetPoint = targetPoints[Random.Range(0, targetPoints.Length)];
                 NumberOfEnemies[randomEnemyIndex]--;
                 return;
             }
             else
             {
-                randomEnemyIndex = Random.Range(0, NumberOfEnemies.Length - 1);
+                randomEnemyIndex = Random.Range(0, NumberOfEnemies.Length-1);
             }
         }
     }
