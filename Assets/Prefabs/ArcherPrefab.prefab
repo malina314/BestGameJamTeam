@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 348d755dec1ddb54a9405cc8fd51a7a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4960164801bf7a42be744df37788566, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2ae7e75513f734a8501ed8d5c20c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 80
+  maxHealth: 80
   damage: 5
   range: 4
   attackDelay: 1

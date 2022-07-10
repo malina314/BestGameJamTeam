@@ -349,13 +349,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99494f8da7b3e84f8023b3cdfeade5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
-  maxHealth: 300
+  health: 50
+  maxHealth: 50
   damage: 20
-  range: 2
-  attackDelay: 1
+  range: 1.5
+  attackDelay: 0.5
   showDebug: 0
-  cost: 250
+  cost: 150
   animator: {fileID: 4116061371402136065}
 --- !u!58 &6784634364384956710
 CircleCollider2D:
@@ -372,7 +372,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.05
+  m_Radius: 0.1
 --- !u!114 &8647691412723726332
 MonoBehaviour:
   m_ObjectHideFlags: 0

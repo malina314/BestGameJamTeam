@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endLocation: {x: 5, y: 3}
-  flightDuration: 999
+  flightDuration: 5
 --- !u!212 &717536862859596661
 SpriteRenderer:
   m_ObjectHideFlags: 0
