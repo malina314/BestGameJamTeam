@@ -25,6 +25,7 @@ public class GameOverController : BaseController<UIGameOverRoot>
     public void CreateLostView()
     {
         ui.UpdateTitle("You LOST!");
+        ui.UpdateMessage("Khotyn has been taken over. Your army retreats north, defeated. Dark days await the Commonwealth as the now seemingly undefeatable Ottoman army march onward, wrecking havoc on the lands of Ukraine.");
     }
 
     public void CreateWinView()
