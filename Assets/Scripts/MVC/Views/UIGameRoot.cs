@@ -31,4 +31,8 @@ public class UIGameRoot : UIRoot
             copy.OnEndDragAction += onTurretDragged;
         }
     }
+    public void UpdateHealth(int value)
+    {
+        healthText.text = value.ToString();
+    }
 }

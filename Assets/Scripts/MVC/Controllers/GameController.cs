@@ -44,6 +44,7 @@ public class GameController : BaseController<UIGameRoot>
     public void DealDamageToCastle(int value)
     {
         gameModel.castleHealth-= value;
+        ui.UpdateHealth(gameModel.castleHealth);
         if(gameModel.castleHealth <= 0)
         {
             Time.timeScale = 0f;
