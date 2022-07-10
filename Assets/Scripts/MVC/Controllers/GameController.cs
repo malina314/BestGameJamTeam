@@ -37,9 +37,14 @@ public class GameController : BaseController<UIGameRoot>
                 break;
         }
 
-        if (FindObjectOfType<EconomyHandler>().subtractBalance(warriorToSpawn.cost))
+        EconomyHandler bank = FindObjectOfType<EconomyHandler>();
+
+        if (bank.subtractBalance(warriorToSpawn.cost))
         {
-            gridScript.spawnTower(Camera.main.ScreenToWorldPoint(eventData.position), warriorToSpawn);
+            if (!gridScript.spawnTower(Camera.main.ScreenToWorldPoint(eventData.position), warriorToSpawn))
+            {
+                bank.addBalance(warriorToSpawn.cost);
+            }
 
             gameModel.NavMeshSurface.BuildNavMesh();
         }
