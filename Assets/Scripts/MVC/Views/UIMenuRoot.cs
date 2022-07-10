@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIMenuRoot : UIRoot
 {
     [SerializeField] private Button startButton;
+    [SerializeField] private Image dialogPanel;
 
     public override void InitView()
     {
@@ -25,5 +26,11 @@ public class UIMenuRoot : UIRoot
     {
         Debug.Log("hej?");
         OnGameStart?.Invoke();
+    }
+
+    public void ChangePanel(Sprite sprite)
+    {
+        dialogPanel.gameObject.SetActive(true);
+        dialogPanel.sprite = sprite;
     }
 }

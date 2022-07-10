@@ -29,7 +29,7 @@ public class WaveScheduler : MonoBehaviour
     void Start()
     {
         spawnedEntities = null;
-        nextWaveStartTime += elapsed + TimeToNextWave1;
+        nextWaveStartTime += elapsed + TimeToNextWave1+30;
     }
 
     private bool isWaveOver()

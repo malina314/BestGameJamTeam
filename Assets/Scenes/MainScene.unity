@@ -326,6 +326,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: {fileID: 0}
   ui: {fileID: 231747300}
+  panel1: {fileID: 21300000, guid: 69426ceb4890a0b4c8b8cde7a31f5891, type: 3}
+  panel2: {fileID: 21300000, guid: ebe2169648edd81478ff7093f5b3adef, type: 3}
+  panel3: {fileID: 21300000, guid: 2dc835401ca334f4b9d192ec9bc87d26, type: 3}
 --- !u!1 &213174688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,6 +6458,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 205139481}
     m_Modifications:
+    - target: {fileID: 226065482971811394, guid: 0169dc445fd2df6498dfad01bc334d5b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226065482971811394, guid: 0169dc445fd2df6498dfad01bc334d5b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226065482971811394, guid: 0169dc445fd2df6498dfad01bc334d5b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 915060236933228236, guid: 0169dc445fd2df6498dfad01bc334d5b, type: 3}
       propertyPath: m_Name
       value: UI Menu Root
