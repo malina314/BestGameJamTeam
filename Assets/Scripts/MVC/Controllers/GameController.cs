@@ -32,7 +32,7 @@ public class GameController : BaseController<UIGameRoot>
             case WarriorType.Shielder:
                 warriorToSpawn = gameModel.ShielderPrefab;
                 break;
-            case WarriorType.Spearman:
+            case WarriorType.Swordsman:
                 Debug.Log("UPS");
                 break;
         }

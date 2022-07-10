@@ -18,6 +18,9 @@ public class GameModel : MonoBehaviour
     [SerializeField] private Shielder shielderPrefab;
     public Shielder ShielderPrefab { get => shielderPrefab; }
 
+    [SerializeField] private Swordsman swordsman;
+    public Swordsman Swordsman { get => swordsman; set => swordsman = value; }
+
     [SerializeField] private Transform warriorsContainer;
     public Transform WarriorsContainer { get => warriorsContainer; }
  

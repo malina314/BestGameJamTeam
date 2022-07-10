@@ -5,7 +5,7 @@ using UnityEngine;
 public enum WarriorType
 {
     Shielder,
-    Spearman,
+    Swordsman,
     Archer
 }
 
